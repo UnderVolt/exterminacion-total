@@ -4,6 +4,8 @@ import Banner from './assets/banner.jpeg'
 import Banner2 from './assets/bn2.jpeg'
 import Logo from './assets/logo.png'
 import WhatsAppIcon from './assets/whatsapp.png'
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 // --- I18N Translations ---
 const translations = {
@@ -582,6 +584,8 @@ export default function App() {
         <div className="bg-white font-sans">
             <Header language={language} setLanguage={setLanguage} t={t} />
             <main>
+                <Analytics />
+                <SpeedInsights />
                 <Hero t={t} />
                 <Services t={t} />
                 <AboutUs t={t} />

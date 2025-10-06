@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Banner from './assets/banner.jpeg'
 import Banner2 from './assets/bn2.jpeg'
 import Logo from './assets/logo.png'
+import WhatsAppIcon from './assets/whatsapp.png'
 
 // --- I18N Translations ---
 const translations = {
@@ -78,6 +79,9 @@ const translations = {
             privacy: "Privacy Policy",
             terms: "Terms of Service",
             copyright: "All Rights Reserved."
+        },
+        whatsapp: {
+            tooltip: "Chat on WhatsApp"
         }
     },
     es: {
@@ -152,6 +156,9 @@ const translations = {
             privacy: "Política de Privacidad",
             terms: "Términos de Servicio",
             copyright: "Todos los Derechos Reservados."
+        },
+        whatsapp: {
+            tooltip: "Chatea por WhatsApp"
         }
     }
 };
@@ -546,6 +553,27 @@ function Footer({ t }: ComponentProps) {
     );
 }
 
+function WhatsAppButton({ t }: ComponentProps) {
+    const phoneNumber = "5215516254854";
+    const message = "Hola! Estoy interesado en sus servicios de control de plagas.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    return (
+        <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group fixed bottom-6 right-6 bg-[#25D366] w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-[#128C7E] transition-all duration-300 transform hover:scale-110 z-50"
+            aria-label="Chat on WhatsApp"
+        >
+            <img src={WhatsAppIcon} alt="WhatsApp Icon" className="w-8 h-8" />
+             <span className="absolute bottom-1/2 translate-y-1/2 right-full mr-4 px-3 py-2 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                {t.whatsapp.tooltip}
+            </span>
+        </a>
+    );
+}
+
 export default function App() {
     const [language, setLanguage] = useState<TranslationKeys>('es');
     const t = translations[language];
@@ -559,6 +587,7 @@ export default function App() {
                 <AboutUs t={t} />
                 <Testimonials t={t} />
                 <ContactForm t={t} />
+                <WhatsAppButton t={t} />
             </main>
             <Footer t={t} />
         </div>

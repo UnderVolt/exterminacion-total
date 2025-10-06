@@ -4,7 +4,7 @@ import Banner from './assets/banner.jpeg'
 import Banner2 from './assets/bn2.jpeg'
 import Logo from './assets/logo.png'
 import WhatsAppIcon from './assets/whatsapp.png'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 
 // --- I18N Translations ---

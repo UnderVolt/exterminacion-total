@@ -584,7 +584,7 @@ function Footer({ t }: ComponentProps) {
 }
 
 function WhatsAppButton({ t }: ComponentProps) {
-    const phoneNumber = "5215516254854";
+    const phoneNumber = "5215546487447";
     const message = "Hola! Estoy interesado en sus servicios de control de plagas.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

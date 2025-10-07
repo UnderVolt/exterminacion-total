@@ -40,7 +40,7 @@ const translations = {
         },
         about: {
             title: "Why Choose Exterminacion Total?",
-            subtitle: "With over 15 years of experience, Exterminacion Total is dedicated to providing top-quality, environmentally responsible pest management. Our certified technicians are committed to customer satisfaction and safety.",
+            subtitle: "With over 35 years of experience, Exterminacion Total is dedicated to providing top-quality, environmentally responsible pest management. Our certified technicians are committed to customer satisfaction and safety.",
             features: [
                 { title: "Certified & Insured", description: "Fully licensed and insured for your peace of mind." },
                 { title: "Eco-Friendly Options", description: "Safe and effective treatments for your family and pets." },
@@ -117,7 +117,7 @@ const translations = {
         },
         about: {
             title: "¿Por Qué Elegir Exterminacion Total?",
-            subtitle: "Con más de 15 años de experiencia, Exterminacion Total se dedica a proporcionar un manejo de plagas de alta calidad y ambientalmente responsable. Nuestros técnicos certificados están comprometidos con la satisfacción y seguridad del cliente.",
+            subtitle: "Con más de 35 años de experiencia, Exterminacion Total se dedica a proporcionar un manejo de plagas de alta calidad y ambientalmente responsable. Nuestros técnicos certificados están comprometidos con la satisfacción y seguridad del cliente.",
             features: [
                 { title: "Certificados y Asegurados", description: "Totalmente licenciados y asegurados para tu tranquilidad." },
                 { title: "Opciones Ecológicas", description: "Tratamientos seguros y efectivos para tu familia y mascotas." },

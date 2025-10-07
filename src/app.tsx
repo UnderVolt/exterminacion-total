@@ -18,7 +18,11 @@ const translations = {
                 { href: "#contact", label: "Contact" },
             ],
             quoteButton: "Get a Free Quote",
-            companyName: "Exterminacion Total",
+            companyName: "Exterminación Total",
+            contactInfo: {
+                phone1: "(55) 1625-4854",
+                email: "exterminaciontotal@gmail.com"
+            }
         },
         hero: {
             title: "Your Trusted Partner for a",
@@ -39,8 +43,8 @@ const translations = {
             ],
         },
         about: {
-            title: "Why Choose Exterminacion Total?",
-            subtitle: "With over 35 years of experience, Exterminacion Total is dedicated to providing top-quality, environmentally responsible pest management. Our certified technicians are committed to customer satisfaction and safety.",
+            title: "Why Choose Exterminación Total?",
+            subtitle: "With over 35 years of experience, Exterminación Total is dedicated to providing top-quality, environmentally responsible pest management. Our certified technicians are committed to customer satisfaction and safety.",
             features: [
                 { title: "Certified & Insured", description: "Fully licensed and insured for your peace of mind." },
                 { title: "Eco-Friendly Options", description: "Safe and effective treatments for your family and pets." },
@@ -51,7 +55,7 @@ const translations = {
             title: "What Our Clients Say",
             subtitle: "We're proud to have earned the trust of homeowners and businesses across the country.",
             reviews: [
-                { quote: "Exterminacion Total was a lifesaver! They were professional, punctual, and got rid of our ant problem in just one visit. Highly recommend!", name: "Maria S.", location: "Mexico City" },
+                { quote: "Exterminación Total was a lifesaver! They were professional, punctual, and got rid of our ant problem in just one visit. Highly recommend!", name: "Maria S.", location: "Mexico City" },
                 { quote: "The team was fantastic. They explained the whole process and used pet-safe products, which was a huge relief for us. Our home is finally rodent-free.", name: "Carlos R.", location: "Morelos" },
                 { quote: "I was impressed with their thoroughness and attention to detail. They didn't just treat the problem; they helped us prevent future issues. Excellent service!", name: "Ana G.", location: "Morelos" },
             ],
@@ -95,7 +99,11 @@ const translations = {
                 { href: "#contact", label: "Contacto" },
             ],
             quoteButton: "Cotización Gratis",
-            companyName: "Exterminacion Total",
+            companyName: "Exterminación Total",
+            contactInfo: {
+                phone1: "(55) 1625-4854",
+                email: "exterminaciontotal@gmail.com"
+            }
         },
         hero: {
             title: "Tu Aliado de Confianza para un Ambiente",
@@ -116,8 +124,8 @@ const translations = {
             ],
         },
         about: {
-            title: "¿Por Qué Elegir Exterminacion Total?",
-            subtitle: "Con más de 35 años de experiencia, Exterminacion Total se dedica a proporcionar un manejo de plagas de alta calidad y ambientalmente responsable. Nuestros técnicos certificados están comprometidos con la satisfacción y seguridad del cliente.",
+            title: "¿Por Qué Elegir Exterminación Total?",
+            subtitle: "Con más de 35 años de experiencia, Exterminación Total se dedica a proporcionar un manejo de plagas de alta calidad y ambientalmente responsable. Nuestros técnicos certificados están comprometidos con la satisfacción y seguridad del cliente.",
             features: [
                 { title: "Certificados y Asegurados", description: "Totalmente licenciados y asegurados para tu tranquilidad." },
                 { title: "Opciones Ecológicas", description: "Tratamientos seguros y efectivos para tu familia y mascotas." },
@@ -128,7 +136,7 @@ const translations = {
             title: "Lo Que Dicen Nuestros Clientes",
             subtitle: "Estamos orgullosos de habernos ganado la confianza de propietarios de viviendas y empresas en todo el país.",
             reviews: [
-                { quote: "¡Exterminacion Total fue un salvavidas! Fueron profesionales, puntuales y eliminaron nuestro problema de hormigas en una sola visita. ¡Muy recomendables!", name: "Maria S.", location: "Ciudad de México" },
+                { quote: "¡Exterminación Total fue un salvavidas! Fueron profesionales, puntuales y eliminaron nuestro problema de hormigas en una sola visita. ¡Muy recomendables!", name: "Maria S.", location: "Ciudad de México" },
                 { quote: "El equipo fue fantástico. Explicaron todo el proceso y usaron productos seguros para mascotas, lo cual fue un gran alivio para nosotros. Nuestra casa finalmente está libre de roedores.", name: "Carlos R.", location: "Morelos" },
                 { quote: "Me impresionó su minuciosidad y atención al detalle. No solo trataron el problema, sino que nos ayudaron a prevenir futuros inconvenientes. ¡Excelente servicio!", name: "Ana G.", location: "Morelos" },
             ],
@@ -265,57 +273,77 @@ function Header({ language, setLanguage, t }: HeaderProps) {
     const navLinks = t.header.navLinks;
 
     const LanguageSwitcher = () => (
-        <div className="flex items-center space-x-2 ml-4">
-            <button onClick={() => setLanguage('en')} className={`px-2 py-1 text-sm font-semibold rounded ${language === 'en' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'}`}>EN</button>
-            <button onClick={() => setLanguage('es')} className={`px-2 py-1 text-sm font-semibold rounded ${language === 'es' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'}`}>ES</button>
+        <div className="flex items-center space-x-2">
+            <button onClick={() => setLanguage('en')} className={`px-2 py-1 text-xs font-semibold rounded ${language === 'en' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}>EN</button>
+            <button onClick={() => setLanguage('es')} className={`px-2 py-1 text-xs font-semibold rounded ${language === 'es' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}>ES</button>
         </div>
     );
 
     return (
-        <header className="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
-            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" className="flex items-center space-x-2">
-                    <img src={Logo} alt="Exterminacion Total Logo" className="w-12 h-12"/>
-                    <span className="text-2xl font-bold text-gray-800">{t.header.companyName}</span>
-                </a>
-                
-                <nav className="hidden md:flex items-center">
-                    {navLinks.map(link => (
-                        <a key={link.href} href={link.href} className="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium px-4">
-                            {link.label}
+        <header className="sticky top-0 z-50 shadow-lg">
+            {/* Top bar with contact info */}
+            <div className="bg-gray-800 text-white text-sm">
+                <div className="container mx-auto px-6 py-2 flex justify-between items-center">
+                    <div className="flex items-center space-x-6">
+                        <a href={`tel:${t.header.contactInfo.phone1.replace(/\s/g, '')}`} className="flex items-center space-x-2 hover:text-green-400 transition-colors">
+                            <PhoneIcon className="w-4 h-4" />
+                            <span>{t.header.contactInfo.phone1}</span>
                         </a>
-                    ))}
-                    <LanguageSwitcher />
-                </nav>
+                         <a href={`mailto:${t.header.contactInfo.email}`} className="hidden sm:flex items-center space-x-2 hover:text-green-400 transition-colors">
+                            <MailIcon className="w-4 h-4" />
+                            <span>{t.header.contactInfo.email}</span>
+                        </a>
+                    </div>
+                    <div className="md:block">
+                        <LanguageSwitcher />
+                    </div>
+                </div>
+            </div>
 
-                <a href="#contact" className="hidden lg:inline-block bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
-                    {t.header.quoteButton}
-                </a>
+            {/* Main navigation */}
+            <div className="bg-white/90 backdrop-blur-md">
+                <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <a href="#" className="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
+                        <img src={Logo} alt="Exterminación Total Logo" className="w-15 h-15"/>
+                        <span className="text-3xl font-extrabold text-gray-800">{t.header.companyName}</span>
+                    </a>
+                    
+                    <nav className="hidden md:flex items-center">
+                        {navLinks.map(link => (
+                            <a key={link.href} href={link.href} className="text-gray-700 hover:text-indigo-600 transition-colors duration-300 font-bold text-xl px-4">
+                                {link.label}
+                            </a>
+                        ))}
+                    </nav>
 
-                <div className="flex items-center md:hidden">
-                    <LanguageSwitcher />
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-800 focus:outline-none ml-3">
-                        {isMenuOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-                    </button>
+                    <a href="#contact" className="hidden lg:inline-block bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
+                        {t.header.quoteButton}
+                    </a>
+
+                    <div className="flex items-center md:hidden">
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-800 focus:outline-none ml-3">
+                            {isMenuOpen ? <XIcon className="w-7 h-7" /> : <MenuIcon className="w-7 h-7" />}
+                        </button>
+                    </div>
                 </div>
             </div>
 
             {isMenuOpen && (
-                <nav className="md:hidden bg-white px-6 pb-4">
-                    <ul className="flex flex-col space-y-4">
+                <nav className="md:hidden bg-white px-6 pb-4 border-t border-gray-200">
+                    <ul className="flex flex-col space-y-4 pt-4">
                         {navLinks.map(link => (
                              <li key={link.href}>
                                 <a 
                                     href={link.href}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="block text-gray-600 hover:text-indigo-600 py-2 transition-colors duration-300"
+                                    className="block text-gray-700 hover:text-indigo-600 py-2 text-lg font-medium transition-colors duration-300"
                                 >
                                     {link.label}
                                 </a>
                             </li>
                         ))}
                     </ul>
-                     <a href="#contact" onClick={() => setIsMenuOpen(false)} className="mt-4 w-full text-center inline-block bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-red-700 transition-all duration-300">
+                     <a href="#contact" onClick={() => setIsMenuOpen(false)} className="mt-4 w-full text-center inline-block bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300">
                         {t.header.quoteButton}
                     </a>
                 </nav>
@@ -392,7 +420,7 @@ function AboutUs({ t }: ComponentProps) {
                 <div className="lg:w-1/2">
                     <img 
                         src={Banner2}
-                        alt="Exterminacion Total team"
+                        alt="Exterminación Total team"
                         className="rounded-lg shadow-2xl w-full h-auto object-cover"
                     />
                 </div>
@@ -510,7 +538,7 @@ function Footer({ t }: ComponentProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
                          <a href="#" className="flex items-center space-x-2 mb-4">
-                            <img src={Logo} alt="Exterminacion Total Logo" className="w-7 h-7"/>
+                            <img src={Logo} alt="Exterminación Total Logo" className="w-7 h-7"/>
                             <span className="text-xl font-bold text-white">{t.header.companyName}</span>
                         </a>
                         <p className="text-gray-400">{t.footer.about}</p>
@@ -565,10 +593,10 @@ function WhatsAppButton({ t }: ComponentProps) {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group fixed bottom-6 right-6 bg-[#25D366] w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-[#128C7E] transition-all duration-300 transform hover:scale-110 z-50"
+            className="group fixed bottom-6 right-6 bg-[#25D366] w-20 h-20 rounded-full flex items-center justify-center shadow-4xl hover:bg-[#128C7E] transition-all duration-300 transform hover:scale-110 z-50"
             aria-label="Chat on WhatsApp"
         >
-            <img src={WhatsAppIcon} alt="WhatsApp Icon" className="w-8 h-8" />
+            <img src={WhatsAppIcon} alt="WhatsApp Icon" className="w-10 h-10" />
              <span className="absolute bottom-1/2 translate-y-1/2 right-full mr-4 px-3 py-2 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                 {t.whatsapp.tooltip}
             </span>

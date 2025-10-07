@@ -305,7 +305,7 @@ function Header({ language, setLanguage, t }: HeaderProps) {
                 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                     <a href="#" className="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
                         <img src={Logo} alt="Exterminación Total Logo" className="w-15 h-15"/>
-                        <span className="text-3xl font-extrabold text-gray-800">{t.header.companyName}</span>
+                        <span className="font-[Merriweather] text-3xl font-extrabold text-gray-800">{t.header.companyName}</span>
                     </a>
                     
                     <nav className="hidden md:flex items-center">
